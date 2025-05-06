@@ -12,7 +12,8 @@ from io import BytesIO
 # Load environment variables from .env
 load_dotenv()
 
-app = Flask(__name__, static_folder='../frontend/build', static_url_path='/')
+app = Flask(__name__, static_folder='../frontend/dist', static_url_path='/')
+
 CORS(app)  # Allow requests from frontend
 
 # Initialize AWS Textract client
@@ -26,10 +27,13 @@ textract = boto3.client(
 # Initialize OpenAI Client
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
-@app.route('/')
-def home():
-    # return jsonify({'info': 'This is the home endpoint. Use other endpoints!'})
-    return send_from_directory(app.static_folder, 'index.html')
+@app.route('/', defaults={'path': ''})
+@app.route('/<path:path>')
+def serve_react(path):
+    if path != "" and os.path.exists(os.path.join(app.static_folder, path)):
+        return send_from_directory(app.static_folder, path)
+    else:
+        return send_from_directory(app.static_folder, 'index.html')
 
 @app.route('/extract', methods=['POST'])
 def extract_text():
