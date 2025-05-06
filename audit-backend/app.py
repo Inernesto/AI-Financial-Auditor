@@ -12,7 +12,7 @@ from io import BytesIO
 # Load environment variables from .env
 load_dotenv()
 
-app = Flask(__name__, static_folder='../audit-frontend/dist', static_url_path='/')
+app = Flask(__name__, static_folder='../audit-frontend/dist', static_url_path='')
 
 CORS(app)  # Allow requests from frontend
 
