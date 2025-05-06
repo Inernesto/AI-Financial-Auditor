@@ -12,7 +12,10 @@ from io import BytesIO
 # Load environment variables from .env
 load_dotenv()
 
-app = Flask(__name__, static_folder='../audit-frontend/dist', static_url_path='/')
+# Serve from a dist folder inside your backend (adjust if different)
+static_dir = os.path.join(os.path.dirname(__file__), '../audit-frontend/dist')
+
+app = Flask(__name__, static_folder=static_dir, static_url_path='')
 
 CORS(app)  # Allow requests from frontend
 
