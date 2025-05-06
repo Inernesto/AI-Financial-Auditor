@@ -13,9 +13,13 @@ from io import BytesIO
 load_dotenv()
 
 # Serve from a dist folder inside your backend (adjust if different)
-static_dir = os.path.join(os.path.dirname(__file__), '../audit-frontend/dist')
+# static_dir = os.path.join(os.path.dirname(__file__), '../audit-frontend/dist')
 
-app = Flask(__name__, static_folder=static_dir, static_url_path='')
+# app = Flask(__name__, static_folder=static_dir, static_url_path='')
+
+dist_dir = os.path.join(os.path.dirname(__file__), '..', 'audit-frontend', 'dist')
+app = Flask(__name__, static_folder=dist_dir, static_url_path='')
+
 
 CORS(app)  # Allow requests from frontend
 
