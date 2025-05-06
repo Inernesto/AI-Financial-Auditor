@@ -2,7 +2,6 @@
 # Node (Frontend)
 # ------------------
 audit-frontend/node_modules/
-audit-frontend/build/
 
 # ------------------
 # Python (Backend)
