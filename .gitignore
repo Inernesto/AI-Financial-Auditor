@@ -1,17 +1,17 @@
 # ------------------
 # Node (Frontend)
 # ------------------
-frontend/node_modules/
-frontend/build/
+audit-frontend/node_modules/
+audit-frontend/build/
 
 # ------------------
 # Python (Backend)
 # ------------------
-backend/__pycache__/
-backend/*.pyc
-backend/*.pyo
-backend/instance/
-backend/.env
+audit-backend/__pycache__/
+audit-backend/*.pyc
+audit-backend/*.pyo
+audit-backend/instance/
+audit-backend/.env
 
 # ------------------
 # General
