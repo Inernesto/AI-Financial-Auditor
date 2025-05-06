@@ -17,7 +17,7 @@ load_dotenv()
 
 # app = Flask(__name__, static_folder=static_dir, static_url_path='')
 
-dist_dir = os.path.join(os.path.dirname(__file__), '..', 'audit-frontend', 'dist')
+dist_dir = os.path.join(os.path.dirname(__file__), 'audit-frontend', 'dist')
 app = Flask(__name__, static_folder=dist_dir, static_url_path='')
 
 
