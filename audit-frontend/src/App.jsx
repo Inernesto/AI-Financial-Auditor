@@ -47,7 +47,7 @@ function App() {
       const route = ocrExtensions.includes(ext) ? "/extract" : "/convert";
 
       try {
-        const response = await fetch(`http://localhost:5000${route}`, {
+        const response = await fetch(`${route}`, {
           method: "POST",
           body: formData,
         });
@@ -75,7 +75,7 @@ function App() {
     setMergedOutput(results);
 
     try {
-      const auditResponse = await fetch("http://localhost:5000/audit", {
+      const auditResponse = await fetch("/audit", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
