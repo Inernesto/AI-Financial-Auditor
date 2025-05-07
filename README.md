@@ -72,6 +72,7 @@ npm run build
 cd ../audit-backend
 python app.py
 ```
+### 6. Open in browser
 Visit: http://localhost:5000
 
 ## Deployment (Heroku)
